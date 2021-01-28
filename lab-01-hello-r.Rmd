@@ -7,7 +7,7 @@ output: github_document
 
 ## Load packages and data
 
-```{r load-packages, message=FALSE}
+```{r load-packages, message=FALSE, warning = FALSE}
 library(tidyverse) 
 library(datasauRus)
 ```
@@ -16,7 +16,13 @@ library(datasauRus)
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
+This dataset has 1846 rows and 3 columns. The variables are dataset, x-values, and y-values.
+
+```{r freq}
+datasaurus_dozen %>%
+  count(dataset) %>%
+  print(13)
+```
 
 ### Exercise 2
 
