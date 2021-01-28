@@ -82,7 +82,23 @@ circle_data %>%
   summarize(r = cor(x, y))
 ```
 The correlation for circle is similar to the correlations for dino and star.
+
 ### Exercise 5
 
-Add code and narrative as needed.
-To add R chunks either type out the backticks, curly braces, and the letter `r` or use the Insert chunk button above, green C+.
+Plots of all data:
+
+```{r plot_all}
+ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+
+  geom_point()+
+  facet_wrap(~ dataset, ncol = 3) +
+  theme(legend.position = "none")
+```
+
+Correlations of all data:
+
+```{r corr_all}
+datasaurus_dozen %>%
+  group_by(dataset) %>%
+  summarize(r = cor(x, y)) %>%
+  print(13)
+```
