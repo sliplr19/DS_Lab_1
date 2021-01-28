@@ -65,18 +65,23 @@ The correlations for dino data and star data are very close.
 
 ### Exercise 4
 
-Add code and narrative as needed.
-Note that two R chunks are given but they are not labeled.
-Use the convention from above to name them appropriately.
+Circle plot:
 
-```{r}
+```{r circle_plot}
+circle_data <- datasaurus_dozen %>%
+  filter(dataset == "circle")
 
+ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
+  geom_point()
 ```
 
-```{r}
+Circle correlation:
 
+```{r circle_corr}
+circle_data %>%
+  summarize(r = cor(x, y))
 ```
-
+The correlation for circle is similar to the correlations for dino and star.
 ### Exercise 5
 
 Add code and narrative as needed.
